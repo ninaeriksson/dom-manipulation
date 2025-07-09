@@ -2,14 +2,14 @@ import cheesecake from './assets/frozen-cheesecake-slice.jpg';
 
 export const correctHTML = document.createElement('main');
 
-correctHTML.id = "correct-page"
+correctHTML.id = 'correct-page';
 
 correctHTML.innerHTML = /*html*/ `
   <section class="introduction">
     <article class="description-container">
       <h1 id="recipe-name">Frozen Cheescake</h1>
       <div class="time-container">
-        <span class="material-icons"> av_timer </span><span class="time">60+ min</span>
+        <span class="material-symbols-outlined"> av_timer </span><span class="time">60+ min</span>
       </div>
       <p class="description">
         Fryst cheesecake är en perfekt dessert för stora kalas eller middagar eftersom du kan
