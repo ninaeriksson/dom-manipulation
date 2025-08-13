@@ -1,5 +1,6 @@
 import { correctHTML } from './correct';
 import { wrongHTML } from './wrong';
+import { part1 } from './part1';
 
 addStylesheet('./src/correct.css', 'correct');
 
@@ -24,10 +25,16 @@ const wrongLink = document.querySelector<HTMLSpanElement>('.wrong-link')!;
 correctLink.addEventListener('click', () => {
   removeStylesheet('wrong');
   addStylesheet('./src/correct.css', 'correct');
-  app.replaceChild(correctHTML, wrongHTML);
 
-  // Uncomment this function invocation below
-  // part1();
+  //app.replaceChild(correctHTML, wrongHTML);
+  if (app.contains(wrongHTML)) {
+    app.replaceChild(correctHTML, wrongHTML);
+  } else if (!app.contains(correctHTML)) {
+    // Om varken finns, lägg till correctHTML
+    app.append(correctHTML);
+  }
+  
+  part1();
 });
 
 wrongLink.addEventListener('click', () => {
