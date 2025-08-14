@@ -30,13 +30,16 @@ export function part2() {
     ingredientsContainerBg: "#f8fafc",
   };
 
-  const $ = <T extends Element = Element>(sel: string) => document.querySelector<T>(sel);
+  const $ = <T extends Element = Element>(sel: string) =>
+    document.querySelector<T>(sel);
   const $$ = (sel: string) => Array.from(document.querySelectorAll(sel));
-  const setText = (el: Element | null, text: string) => { if (el) el.textContent = text; };
+  const setText = (el: Element | null, text: string) => {
+    if (el) el.textContent = text;
+  };
   const ensureULItems = (ul: Element | null, texts: string[]) => {
     if (!ul) return;
     while (ul.firstChild) ul.removeChild(ul.firstChild);
-    texts.forEach(t => {
+    texts.forEach((t) => {
       const li = document.createElement("li");
       li.textContent = t;
       ul.appendChild(li);
@@ -72,21 +75,19 @@ export function part2() {
     setText(nameEl, CORRECTS.recipeName);
   }
 
-  {
-    let icon = $(".time .material-symbols-outlined") as HTMLElement | null
-            || $(".time span") as HTMLElement | null
-            || $(".time i") as HTMLElement | null
-            || $(".time") as HTMLElement | null;
+  const timeContainer = document.querySelector(".time-container");
+  const iconSpan = timeContainer?.querySelector(
+    "span:first-child"
+  ) as HTMLElement | null;
 
-    if (icon) {
-      icon.classList.add("material-symbols-outlined");
-      icon.textContent = "schedule";
-    }
+  if (iconSpan) {
+    iconSpan.className = "material-symbols-outlined";
+    iconSpan.textContent = "schedule";
   }
 
-  {
-    const timeTextEl = $(".time .estimate") || $(".time span:last-child") || $(".time");
-    setText(timeTextEl, CORRECTS.timeText);
+  const timeText = timeContainer?.querySelector("span:last-child");
+  if (timeText) {
+    timeText.textContent = "60+ min";
   }
 
   {
@@ -116,7 +117,10 @@ export function part2() {
 
   {
     const heading = $(".instructions") as HTMLElement | null;
-    if (heading) heading.style.textShadow = "none";
+    if (heading) {
+      heading.style.textShadow = "none";
+      heading.classList.remove("shadow");
+    }
   }
 
   {

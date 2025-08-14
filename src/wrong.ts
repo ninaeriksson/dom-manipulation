@@ -1,4 +1,4 @@
-import applePie from './assets/apple-pie.jpg';
+import cheesecake from './assets/frozen-cheesecake-slice.jpg';
 
 export const wrongHTML = document.createElement('main');
 
@@ -8,7 +8,7 @@ wrongHTML.innerHTML = /*html*/ `
   <section class="introduction">
     <article class="description-container">
       <h1 id="recipe-name">Frozen Blueberry Cake</h1>
-      <div class="time-container"><span> av_timer </span><span class="time">20 min</span></div>
+      <div class="time-container"><span> av_timer </span><span class="time">60+ min</span></div>
       <p class="description">
         Fryst cheesecake är en perfekt dessert för stora kalas eller middagar eftersom du kan
         göra den i förväg och frysa in. Ta fram cheesecaken en stund innan servering och garnera
@@ -16,7 +16,7 @@ wrongHTML.innerHTML = /*html*/ `
       </p>
     </article>
     <article class="image-container">
-      <img src="${applePie}" alt="Slice of Frozen Cheescake" />
+      <img src="${cheesecake}" alt="Slice of Frozen Cheescake" />
     </article>
   </section>
   <section class="how-to-do">
