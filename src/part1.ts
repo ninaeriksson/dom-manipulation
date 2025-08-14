@@ -1,14 +1,14 @@
 export function part1() {
-  // 1. Receptets namn
+  // 1
   const recipeNameElement = document.querySelector("#recipe-name");
   const recipeName = recipeNameElement?.textContent?.trim();
   console.log("Recipe name:", recipeName);
 
-  // 2. HTML-tag för receptnamnet
+  // 2
   const recipeTag = recipeNameElement?.tagName;
   console.log("Recipe tag:", recipeTag);
 
-  // 3. Fontstorlek på beskrivning
+  // 3
   const descriptionParagraph = document.querySelector(
     ".description"
   ) as HTMLElement;
@@ -17,12 +17,12 @@ export function part1() {
     : undefined;
   console.log("Description font size:", descriptionFontSize);
 
-  // 4. Alt-attribut på bilden
+  // 4
   const recipeImage = document.querySelector("img");
   const imageAlt = recipeImage?.getAttribute("alt");
   console.log("Image alt:", imageAlt);
 
-  // 5. Bildens dimensioner och URL
+  // 5
   const imageInfo = recipeImage
     ? {
         url: recipeImage.src,
@@ -32,17 +32,17 @@ export function part1() {
     : undefined;
   console.log("Image info:", imageInfo);
 
-  // 6. Antal ingredienser för pasten
+  // 6
   const pasteIngredients = document.querySelectorAll(
     ".ingredients-list-paste li"
   );
   console.log("Number of ingredients (paste):", pasteIngredients.length);
 
-  // 7. Fjärde elementet i pasten
+  // 7
   const fourthIngredient = pasteIngredients[3]?.textContent?.trim();
   console.log("Fourth ingredient (paste):", fourthIngredient);
 
-  // 8. Skapa array av instruktioner
+  // 8
   const instructionElements = document.querySelectorAll(
     ".instructions-list li"
   );
